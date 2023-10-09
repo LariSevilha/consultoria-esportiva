@@ -8,6 +8,7 @@ gem "rails", "~> 7.0.8"
 gem 'devise'
 gem 'rails_admin'
 gem 'cancancan'
+gem 'bootstrap' 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
