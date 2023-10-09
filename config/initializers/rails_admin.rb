@@ -22,6 +22,18 @@ RailsAdmin.config do |config|
         
       end
     end
+    
+    config.model "Header" do
+      navigation_label "Topo"
+      list do
+        field :id
+        field :icon  
+      end
+      edit do
+        field :icon  
+        field :description, :wysihtml5   
+      end
+    end
     dashboard
     show  
 
