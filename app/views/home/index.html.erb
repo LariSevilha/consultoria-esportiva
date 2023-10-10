@@ -1,4 +1,38 @@
-<%= render 'home/includes/top'%>
-<%= render 'home/includes/video'%>
-<%= render 'home/includes/list'%>
-<%= render 'home/includes/footer'%>
+<style>
+  .container-centralizada {
+    background-color: black;
+    color: white; /* Define a cor do texto para branco */
+    padding: 20px; /* Espaçamento interno para o conteúdo */
+    text-align: center; /* Centraliza o texto horizontalmente */
+  }
+
+  .container-centralizada img {
+    max-width: 100%; 
+  }
+</style>
+
+<div class="container-centralizada">
+  <% @header.each do |header| %> 
+    <p class="image-container">
+      <%= image_tag header.icon_url, class: "img-responsive" %>
+    </p> 
+    <p class="h-description"><%= header.description.html_safe %></p> 
+  <% end %>
+
+<% @video.each do |video| %>
+  <h2><%= video.title %></h2>
+  <div class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= extract_youtube_video_id(video.url) %>" frameborder="0" allowfullscreen></iframe>
+  </div>
+<% end %>
+
+<img src="app/assets/images/img2" alt="Texto alternativo da imagem">
+
+
+  
+ 
+  <% @footer.each do |footer| %>
+    <p><%= image_tag footer.icon_url %></p> 
+    <p><%= footer.url %></p> 
+  <% end %>
+</div>
