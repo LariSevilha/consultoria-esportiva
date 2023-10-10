@@ -1,38 +1,142 @@
 <style>
-  .container-centralizada {
-    background-color: black;
-    color: white; /* Define a cor do texto para branco */
-    padding: 20px; /* Espaçamento interno para o conteúdo */
-    text-align: center; /* Centraliza o texto horizontalmente */
-  }
+        body {
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+.h-description{
+        text-align: justify; 
+}
+        .container-centralizada {
+            background-color: black;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            max-width: 100%;
+            margin: 0 auto;
+            box-sizing: border-box;
+            margin: 10px; /* Adicione margens de 10px em telas menores */
+        }
 
-  .container-centralizada img {
-    max-width: 100%; 
-  }
-</style>
+        .container-centralizada img {
+            max-width: 100%;
+            height: auto;
+        }
 
-<div class="container-centralizada">
-  <% @header.each do |header| %> 
-    <p class="image-container">
-      <%= image_tag header.icon_url, class: "img-responsive" %>
-    </p> 
-    <p class="h-description"><%= header.description.html_safe %></p> 
-  <% end %>
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
 
-<% @video.each do |video| %>
-  <h2><%= video.title %></h2>
-  <div class="video-container">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= extract_youtube_video_id(video.url) %>" frameborder="0" allowfullscreen></iframe>
-  </div>
-<% end %>
+        ul li {
+            margin: 10px 0;
+        }
 
-<img src="app/assets/images/img2" alt="Texto alternativo da imagem">
+  @media (max-width: 768px) {
+    .container-centralizada {
+        padding: 10px;
+        text-align: justify; 
+    }
+
+    h2 {
+        font-size: 20px;    }
+
+    .video-container {
+        overflow: hidden;
+        position: relative;
+        padding-bottom: 0; /* Remova o preenchimento inferior para que o vídeo não seja cortado */
+        padding-top: 0; /* Remova o preenchimento superior */
+        height: auto; /* Permita que a altura do vídeo se ajuste ao seu conteúdo */
+        margin: 10px 0;
+    }
+
+    .video-container iframe {
+        width: 100%; /* Ajuste a largura do iframe para ocupar 100% da largura da tela */
+        height: auto; /* Permita que a altura se ajuste automaticamente para manter a proporção */
+    }
+
+    ul li {
+        margin: 5px 0; /* Reduza as margens dos itens da lista em telas menores */
+    }
+}
+.icon-small {
+    width: 20px; /* Defina o tamanho desejado para os ícones */
+    height: 20px;
+}
+/* Estilos para dispositivos móveis (largura máxima de 768 pixels) */
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-content, .developer-info {
+        max-width: 100%;
+        text-align: center;
+    }
+    .developer-info img {
+        max-width: 100px;
+        height: auto;
+        margin: 0 auto;
+    }
+}
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="container-centralizada">
+        <% @header.each do |header| %> 
+            <p class="image-container">
+                <%= image_tag header.icon_url, class: "img-responsive" %>
+            </p> 
+            <p class="h-description"><%= header.description.html_safe %></p> 
+        <% end %>
+
+        <% @video.each do |video| %>
+            <h2><%= video.title %></h2>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= extract_youtube_video_id(video.url) %>" frameborder="0" allowfullscreen></iframe>
+            </div>
+        <% end %>
+
+        <ul>
+            <li>PLANEJAMENTO DE TREINO</li>
+            <li>CORREÇÃO POSTURAL</li>
+            <li>PLANO ALIMENTAR</li> 
+        </ul>
+
+        <ul>
+            <li>SUPLEMENTAÇÃO</li>
+            <li>CORREÇÃO BIOMECÂNICA DE EXERCÍCIOS</li>
+            <li>SAÚDE INTESTINAL</li> 
+        </ul>
+      <% @footer.each do |footer| %>
+            <div class="footer-icon">
+                 <a href="<%= footer.url %>" target="_blank"> <!-- Adicione target="_blank" para abrir em nova aba -->
+                    <%= image_tag footer.icon_url, class: "icon-small" %>
+                </a>
+            </div>
+        <% end %>
+
+<footer style="display: flex; justify-content: space-between;">
+    <div class="footer-content">
+        <div class="additional-info">
+            <div class="copyright">
+                &copy; <%= Time.now.year %> Todos os direitos reservados
+            </div>
+        </div>
+    </div>
+    <div class="developer-info">
+        Desenvolvido por:
+        <img src="../assets/images/desenvolvido.png" alt="ls">
+    </div>
+</footer>
 
 
-  
- 
-  <% @footer.each do |footer| %>
-    <p><%= image_tag footer.icon_url %></p> 
-    <p><%= footer.url %></p> 
-  <% end %>
+
+
+
+    </div>
 </div>
+  
