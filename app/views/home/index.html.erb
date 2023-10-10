@@ -81,6 +81,9 @@
     }
 }
 
+.img-footer{
+    width: 60px;
+}
     </style>
 </head>
 <body>
@@ -110,16 +113,9 @@
             <li>SUPLEMENTAÇÃO</li>
             <li>CORREÇÃO BIOMECÂNICA DE EXERCÍCIOS</li>
             <li>SAÚDE INTESTINAL</li> 
-        </ul>
-      <% @footer.each do |footer| %>
-            <div class="footer-icon">
-                 <a href="<%= footer.url %>" target="_blank"> <!-- Adicione target="_blank" para abrir em nova aba -->
-                    <%= image_tag footer.icon_url, class: "icon-small" %>
-                </a>
-            </div>
-        <% end %>
+        </ul> 
 
-        <footer style="display: flex; justify-content: space-between;">
+        <footer style="display: flex; justify-content: space-between; align-items: center;">
             <div class="footer-content">
                 <div class="additional-info">
                     <div class="copyright">
@@ -129,11 +125,11 @@
             </div>
             <div class="developer-info">
                 Desenvolvido por: 
-                <%#= image_tag 'desenvolvido.png'%>
+               <a href="https://www.linkedin.com/in/larissa-sevilha-378718217/" target="_blank">
+                  <%= image_tag 'ls.png', class: "img-footer" %>
+                </a> 
             </div>
-        </footer>
- 
-
+        </footer> 
     </div>
 </div>
   
