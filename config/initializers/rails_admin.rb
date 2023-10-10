@@ -13,13 +13,12 @@ RailsAdmin.config do |config|
       navigation_label "Gerenciar Usuários"
       list do
         field :id
-        field :name 
+        field :name  
         field :email 
       end
       edit do
         field :name 
-        field :email 
-        
+        field :email  
       end
     end
     
@@ -34,6 +33,18 @@ RailsAdmin.config do |config|
         field :description, :wysihtml5   
       end
     end
+    
+    config.model "Video" do
+      navigation_label "Videos"
+      list do
+        field :id
+        field :title  
+      end
+      edit do
+        field :title  
+        field :url 
+      end
+    end 
     dashboard
     show  
 
