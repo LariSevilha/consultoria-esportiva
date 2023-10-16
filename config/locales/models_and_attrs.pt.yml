@@ -16,3 +16,6 @@ pt:
         email: "E-mail"
       video:
         title: "Titulo"
+      header:
+        icon: "Logo"
+        description: "Descrição"
