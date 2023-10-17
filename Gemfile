@@ -14,9 +14,8 @@ gem 'carrierwave'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
-# Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
-
+gem 'pg', '~> 1.4', '>= 1.4.5'
+gem 'cloudinary', '~> 1.27'
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
@@ -76,3 +75,9 @@ group :test do
   gem "webdrivers"
 
 end
+
+gem "dockerfile-rails", ">= 1.5", :group => :development
+
+gem "sentry-ruby", "~> 5.12"
+
+gem "sentry-rails", "~> 5.12"
