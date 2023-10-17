@@ -22,13 +22,6 @@
         font-size: 15px;
     }
 } */
-  
- @media (max-width: 768px) {
-    footer {
-        flex-direction: column;
-        font-size: 15px;
-    }
-}
 body{
   background-color: black;
   color: white;
@@ -229,15 +222,71 @@ footer {
   background: red;
   top: -6px;
   left: -11px;
+
+
 }
-  @media screen and (max-width: 490px) {
-    .img-lines-video, .box-elipse,  .retangle, .img-lines  {
-      display: none;
-    }
+
+@media (max-width: 768px) {
+  /* .box-elipse, .retangle, .img-lines  {
+    display: none;
+  } */
+  footer {
+    flex-direction: column;
+    font-size: 15px;
   }
-  .header-i{
-      width: 364px;
+  .img-lines-video {
+    width: 194%;
+    right: -108px;
+    top: -13px;
   }
+
+  .img-lines {
+    left: -285px !important;
+    z-index: -1;
+  }
+
+  .container {
+    overflow-x: hidden;
+  }
+
+  .point-elipse {
+    top: 47px;
+    left: -7px;
+
+  }
+  .retangle {
+    height: 50px;
+    border-bottom: none;
+    border-right: none;
+    border-top: 2px solid red;
+    border-left: 2px solid red;
+    right: -14px;
+    top: -45px;
+
+  }
+  .retangle.ret2 {
+    border-bottom: none;
+    border-right: 2px solid red;
+    border-top: 2px solid red;
+    border-left: none;
+    right: 40px !important;
+  }
+  .box-elipse {
+    right: -83px !important;
+    top: -98px !important;
+  }
+  .retangle.ret2 .point-elipse {
+    left: 243px !important;
+  }
+  .box-elipse.be-2 {
+    right: 253px !important;
+  }
+}
+
+.header-i{
+    width: 364px;
+}
+
   </style>
 
   <body>
