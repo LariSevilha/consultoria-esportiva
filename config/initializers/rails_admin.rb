@@ -19,17 +19,16 @@ RailsAdmin.config do |config|
       edit do
         field :name 
         field :email  
+        field :password  
       end
     end
     
     config.model "Header" do
       navigation_label "Topo"
       list do
-        field :id
-        field :icon  
+        field :id 
       end
-      edit do
-        field :icon  
+      edit do 
         field :description, :wysihtml5   
       end
     end
