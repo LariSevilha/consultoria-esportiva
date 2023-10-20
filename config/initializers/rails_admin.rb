@@ -44,6 +44,17 @@ RailsAdmin.config do |config|
         field :url 
       end
     end 
+    
+    config.model "About" do
+      navigation_label "Sobre mim"
+      list do
+        field :id
+        field :description  
+      end
+      edit do
+        field :description, :wysihtml5
+      end
+    end 
     dashboard
     show  
 

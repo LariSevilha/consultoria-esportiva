@@ -10,6 +10,9 @@ pt:
       footer: 
         one: "Rodapé"
         other: "Rodapé"
+      about: 
+        one: "Sobre mim"
+        other: "Sobre mim"
     attributes:
       user:
         name: "Nome"
@@ -18,4 +21,6 @@ pt:
         title: "Titulo"
       header:
         icon: "Logo"
+        description: "Descrição"
+      about:
         description: "Descrição"
