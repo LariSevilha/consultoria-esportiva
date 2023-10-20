@@ -285,6 +285,8 @@ footer {
 
 .header-i{
     width: 364px;
+    height: auto;
+    max-width: 100%;
 }
 .image-container-about{
   display: flex;
@@ -312,29 +314,19 @@ footer {
 
 .about-text {
   text-align: justify;
-  flex: 1;
-  margin-left: 20px;
 }
 
 .about-cont {
   display: flex;
-  flex-direction: column; /* Empilhe os elementos na vertical em dispositivos menores */
-  gap: 32px; /* Adicione espaço entre cada entrada "Sobre" */
+  flex-direction: column;
+  gap: 32px;
 }
 
 @media (min-width: 768px) {
   .about-cont {
-    flex-direction: row; /* Disponha os elementos em linha em dispositivos maiores */
-     }
-}
-
-@media (max-width: 767px) {
-  .about-cont {
-    flex-direction: column; /* Empilhe os elementos na vertical em dispositivos móveis */
-    align-items: flex-start; /* Alinhe os elementos à esquerda em dispositivos móveis */
+    flex-direction: row;
   }
 }
-
 
 .menu {
   background-color: #333;
@@ -357,16 +349,13 @@ footer {
   margin: 0 20px;
 }
 
-.menu a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 16px;
-  transition: color 0.3s;
+.navbar-nav .nav-link:hover {
+  color: red !important; 
 }
-
-.menu a:hover {
-  color: #ff0000;
+.navbar-nav .nav-link {
+  color: white !important; 
 }
+ 
 
   </style>
 

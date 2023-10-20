@@ -3,13 +3,32 @@
     <div class="container-centralizada">
     
         <div class="menu">
-          <ul>
-            <li><a href="#header">Início</a></li>
-            <li><a href="#about">Sobre</a></li>
-            <li><a href="#video">Vídeos</a></li>
-            <li><a href="#services">Serviços</a></li>
-            <li><a href="#contact">Contato</a></li>
-          </ul>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#header">Início</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#about">Quem sou eu</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#video">Meu trabalho</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#services">Serviços</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="https://api.whatsapp.com/send?phone=55679997844" target="_blank">Contato</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav> 
         </div>
 
         <div id="header" class="container">
@@ -26,7 +45,7 @@
           </div>
 
          
-          <div id="about" class="container">
+        <div id="about" class="container">
               <% @about.each do |a| %>
                 <div class="about-cont mb-3 mt-5 d-flex">
                   <div class="about-text">
@@ -39,9 +58,10 @@
                 </div>
               <% end %>
             </div>
-
-
  
+
+        
+         
         <div id="video" class="container">
             <% @video.each do |video| %>
                 <h2 class="text-center"><%= video.title %></h2>
